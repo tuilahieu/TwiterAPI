@@ -13,9 +13,10 @@ export const registerController = async (req: Request, res: Response) => {
   const { email, password } = req.body
   try {
     const result = await usersService.register({ email, password })
-    console.log(result)
+    // console.log(result)
     return res.json({
-      message: 'Register successful'
+      message: 'Register successful',
+      result
     })
   } catch (error) {
     console.log(error)
